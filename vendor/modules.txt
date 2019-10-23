@@ -1,75 +1,24 @@
 # github.com/alexbrainman/odbc v0.0.0-20190102080306-cf37ce290779
 github.com/alexbrainman/odbc
 github.com/alexbrainman/odbc/api
-# github.com/go-log/log v0.1.0
-github.com/go-log/log
-github.com/go-log/log/log
 # github.com/go-xorm/xorm v0.7.9
 github.com/go-xorm/xorm
+# github.com/gogo/protobuf v1.3.1
+github.com/gogo/protobuf/proto
 # github.com/golang/protobuf v1.3.2
+github.com/golang/protobuf/ptypes/timestamp
 github.com/golang/protobuf/proto
-github.com/golang/protobuf/jsonpb
-github.com/golang/protobuf/ptypes/struct
-# github.com/gomsa/tools v0.0.0-20191007021739-ab68052e7f2d
+# github.com/gomsa/tools v0.0.0-20191023015507-2b2a01325e05
 github.com/gomsa/tools/env
 github.com/gomsa/tools/xorm
-# github.com/google/uuid v1.1.1
-github.com/google/uuid
-# github.com/micro/go-micro v1.13.2
-github.com/micro/go-micro/client
-github.com/micro/go-micro/server
-github.com/micro/go-micro/broker
-github.com/micro/go-micro/client/pool
-github.com/micro/go-micro/client/selector
-github.com/micro/go-micro/codec
-github.com/micro/go-micro/codec/bytes
-github.com/micro/go-micro/codec/grpc
-github.com/micro/go-micro/codec/json
-github.com/micro/go-micro/codec/jsonrpc
-github.com/micro/go-micro/codec/proto
-github.com/micro/go-micro/codec/protorpc
-github.com/micro/go-micro/errors
-github.com/micro/go-micro/metadata
-github.com/micro/go-micro/registry
-github.com/micro/go-micro/transport
-github.com/micro/go-micro/util/buf
-github.com/micro/go-micro/util/addr
-github.com/micro/go-micro/util/log
-github.com/micro/go-micro/util/net
-github.com/micro/go-micro/util/socket
-github.com/micro/go-micro/registry/cache
-github.com/micro/go-micro/util/tls
-# github.com/micro/mdns v0.3.0
-github.com/micro/mdns
-# github.com/miekg/dns v1.1.15
-github.com/miekg/dns
-# github.com/pkg/errors v0.8.1
-github.com/pkg/errors
+# github.com/jinzhu/gorm v1.9.11
+github.com/jinzhu/gorm
+# github.com/jinzhu/inflection v1.0.0
+github.com/jinzhu/inflection
 # github.com/shopspring/decimal v0.0.0-20191009025716-f1972eb1d1f5
 github.com/shopspring/decimal
-# golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
-golang.org/x/crypto/ed25519
-golang.org/x/crypto/ed25519/internal/edwards25519
-# golang.org/x/net v0.0.0-20191021144547-ec77196f6094
-golang.org/x/net/context
-golang.org/x/net/http2
-golang.org/x/net/http2/h2c
-golang.org/x/net/http/httpguts
-golang.org/x/net/http2/hpack
-golang.org/x/net/idna
-golang.org/x/net/ipv4
-golang.org/x/net/ipv6
-golang.org/x/net/bpf
-golang.org/x/net/internal/iana
-golang.org/x/net/internal/socket
 # golang.org/x/sys v0.0.0-20190801041406-cbf593c0f2f3
 golang.org/x/sys/windows
-golang.org/x/sys/unix
-# golang.org/x/text v0.3.2
-golang.org/x/text/secure/bidirule
-golang.org/x/text/unicode/bidi
-golang.org/x/text/unicode/norm
-golang.org/x/text/transform
 # xorm.io/builder v0.3.6
 xorm.io/builder
 # xorm.io/core v0.7.2-0.20190928055935-90aeac8d08eb

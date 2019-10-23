@@ -2,13 +2,14 @@ package service
 
 import (
 	"fmt"
-	pd "github.com/gomsa/old-service/proto/goods"
+
 	"github.com/go-xorm/xorm"
+	pd "github.com/gomsa/old-service/proto/goods"
 )
 
 //Goods 商品仓库接口
 type Goods interface {
-	List(*pd.Request) (*pd.Response, error)
+	List(*pd.Request) ([]*pd.Goods, error)
 }
 
 // GoodsRepository 商品仓库
@@ -17,8 +18,13 @@ type GoodsRepository struct {
 }
 
 // List 条件获取商品
-func (repo *GoodsRepository) List(req *pd.Request) (res *pd.Response, err error) {
-	fmt.Println(req,res)
+func (repo *GoodsRepository) List(req *pd.Request) (goods []*pd.Goods, err error) {
+	engine := repo.Engine.Table("tBmPlu")
+	if req.ListQuery != nil {
+		engine = engine.Where("XgDate?", &req.ListQuery.XgDate)
+	}
+	err = engine.Find(&goods, req.Goods)
+	fmt.Println(req, goods)
 	// goods := &models.Goods{
 	// 	BarCode: good.BarCode,
 	// }
@@ -34,5 +40,5 @@ func (repo *GoodsRepository) List(req *pd.Request) (res *pd.Response, err error)
 	// 	Standard: goods.Standard,
 	// }
 	// return g, err
-	return res, err
+	return goods, err
 }

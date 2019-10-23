@@ -7,4 +7,4 @@ dev:
 	make build && make run
 
 build:
-	protoc -I . --go_out=plugins=micro:. proto/goods/goods.proto
+	protoc -I . --gogofaster_out=plugins=micro:. proto/goods/goods.proto

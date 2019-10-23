@@ -11,13 +11,16 @@ import (
 	"github.com/gomsa/old-service/service"
 )
 
-func TestOrderPaySum(t *testing.T) {
+func TestGoodsList(t *testing.T) {
 	// 商品仓库 db 接口实现
 	repo := &service.GoodsRepository{db.Engine}
 	h := hander.Goods{repo}
 	req := &gPD.Request{
+		// ListQuery: &gPD.ListQuery{
+		// 	XgDate: `> "2019-05-23T16:00:00.000Z"`,
+		// },
 		Goods: &gPD.Goods{
-			PluCode:`123`,
+			PluCode: `3301029`,
 		},
 	}
 	res := &gPD.Response{}

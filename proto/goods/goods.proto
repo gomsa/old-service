@@ -10,7 +10,7 @@ message Goods {
     string PluCode = 1; // 自编码
     string PluName = 2; // 商品名称
     string BarCode = 3; // 条码
-    string Unit = 4; // 单位
+    string Unit = 4;    // 单位
     string Spec = 5;    // 规格
     string Weigt = 6;   // 重量
     string DepCode = 7; // 部门ID
@@ -29,21 +29,22 @@ message Goods {
     string CgyCode = 20;    // 采购员ID
     string CgyName = 21;    // 采购员名称
     string XgDate = 22;     // 修改时间
-    string LrDate = 23;    // 录入时间
+    string LrDate = 23;     // 录入时间
     string UserCode = 24;    // 用户ID
     string UserName = 25;    // 用户名称
-    string PackPriceType = 26;    // 打包类型
-    string PackPriceRate = 27;    // 打包价格率
+    string PackPriceType = 26;// 打包类型
+    string PackPriceRate = 27;// 打包价格率
     string PluStatus = 28;    // 商品状态(0,1,2,3,4,A,B)
 }
 message ListQuery{
-    int64 limit=1;          // 返回数量
-    int64 page=2;           // 页面
-    string sort=3;          // 排序
+    int64 limit = 1;          // 返回数量
+    int64 page = 2;           // 页面
+    string sort = 3;          // 排序
+    string XgDate = 4;        // 修改时间
 }
 message Request {
     ListQuery list_query = 1;           // 列表分页请求
-    Goods goods = 2;                      // 用户
+    Goods goods = 2;                    // 用户
 }
 
 message Response {
