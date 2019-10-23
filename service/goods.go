@@ -1,7 +1,7 @@
 package service
 
 import (
-	"fmt"
+	"github.com/gomsa/tools/uitl"
 
 	"github.com/go-xorm/xorm"
 	pd "github.com/gomsa/old-service/proto/goods"
@@ -19,26 +19,12 @@ type GoodsRepository struct {
 
 // List 条件获取商品
 func (repo *GoodsRepository) List(req *pd.Request) (goods []*pd.Goods, err error) {
-	engine := repo.Engine.Table("tBmPlu")
+	session := repo.Engine.Table("tBmPlu")
 	if req.ListQuery != nil {
-		engine = engine.Where("XgDate?", &req.ListQuery.XgDate)
+		if req.ListQuery.Where != `` {
+			session = uitl.XormWhere(session, req.ListQuery.Where)
+		}
 	}
-	err = engine.Find(&goods, req.Goods)
-	fmt.Println(req, goods)
-	// goods := &models.Goods{
-	// 	BarCode: good.BarCode,
-	// }
-	// err := GoodsInfo(repo.Engine, goods)
-	// if err != nil {
-	// 	return nil, err
-	// }
-	// g := &gpd.Good{
-	// 	Id:       goods.Id,
-	// 	Name:     goods.Name,
-	// 	BarCode:  goods.BarCode,
-	// 	Price:    goods.Price,
-	// 	Standard: goods.Standard,
-	// }
-	// return g, err
+	err = session.Find(&goods, req.Goods)
 	return goods, err
 }

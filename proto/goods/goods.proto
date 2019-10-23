@@ -40,7 +40,7 @@ message ListQuery{
     int64 limit = 1;          // 返回数量
     int64 page = 2;           // 页面
     string sort = 3;          // 排序
-    string XgDate = 4;        // 修改时间
+    string where = 4;         // 修改时间  (`XgDate|>=|time|2019-10-19 00:00:00`) 查询字段|条件|类型|值
 }
 message Request {
     ListQuery list_query = 1;           // 列表分页请求

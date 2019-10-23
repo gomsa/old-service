@@ -16,16 +16,16 @@ func TestGoodsList(t *testing.T) {
 	repo := &service.GoodsRepository{db.Engine}
 	h := hander.Goods{repo}
 	req := &gPD.Request{
-		// ListQuery: &gPD.ListQuery{
-		// 	XgDate: `> "2019-05-23T16:00:00.000Z"`,
-		// },
+		ListQuery: &gPD.ListQuery{
+			Where: `XgDate|>=|time|2019-10-19 00:00:00,PluCode|=|string|3800368`,
+		},
 		Goods: &gPD.Goods{
-			PluCode: `3301029`,
+			// PluCode: `3301029`,
 		},
 	}
 	res := &gPD.Response{}
 	err := h.List(context.TODO(), req, res)
-	log.Println(res.Total)
+	log.Println(res)
 	if err != nil {
 		t.Errorf("Query goods failed, %v!", err)
 	}
