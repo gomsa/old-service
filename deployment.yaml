@@ -1,0 +1,71 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: old-service
+  namespace: srv
+spec:
+  selector:
+    app: old-service
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8080
+      name: micro
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: old-service
+  namespace: srv
+  labels:
+    app: old-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: old-service
+  template:
+    metadata:
+      labels:
+        app: old-service
+    spec:
+      serviceAccountName: micro-services
+      imagePullSecrets:
+      - name: pipeline-docker-registry
+      containers:
+        - name: old-service
+          image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+          imagePullPolicy: Always
+          command: [
+            "service",
+            "--selector=static",
+            "--server_address=:8080",
+          ]
+          env:
+            - name: DB_HOST
+              value: "192.168.20.10"
+            - name: DB_USER
+              value: "sa"
+            - name: DB_PASSWORD
+              value: "123456"
+            - name: DB_NAME
+              value: "stmis1"
+          ports:
+          - containerPort: 8080
+            name: micro
+            protocol: TCP
+        - name: health
+          image: microhq/health:kubernetes
+          command: [
+            "/health",
+            "--health_address=0.0.0.0:8081",
+            "--server_name=old-service",
+            "--server_address=0.0.0.0:8080"
+          ]
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8081
+            initialDelaySeconds: 3
+            periodSeconds: 3
