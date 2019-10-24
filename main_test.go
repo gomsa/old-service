@@ -13,7 +13,7 @@ import (
 
 func TestGoodsList(t *testing.T) {
 	// 商品仓库 db 接口实现
-	repo := &service.GoodsRepository{db.Engine}
+	repo := &service.GoodsRepository{db.DB}
 	h := hander.Goods{repo}
 	req := &gPD.Request{
 		ListQuery: &gPD.ListQuery{

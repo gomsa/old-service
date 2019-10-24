@@ -11,7 +11,7 @@ import (
 const TimeLayout = "2006-01-02 15:04:05"
 
 // XormWhere Xorm 条件查询
-func XormWhere(engine *xorm.Session, value string) *xorm.Engine {
+func XormWhere(session *xorm.Session, value string) *xorm.Session {
 	where := strings.Split(value, ",")
 	for _, whe := range where {
 		split := strings.Split(whe, "|")
@@ -23,7 +23,7 @@ func XormWhere(engine *xorm.Session, value string) *xorm.Engine {
 		case `time`:
 			val, _ = time.ParseInLocation(TimeLayout, split[3], time.Local)
 		}
-		engine.Where(param, val)
+		session.Where(param, val)
 	}
-	return engine
+	return session
 }

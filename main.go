@@ -6,7 +6,6 @@ import (
 	micro "github.com/micro/go-micro"
 	"github.com/micro/go-micro/util/log"
 
-
 	"github.com/gomsa/old-service/hander"
 	db "github.com/gomsa/old-service/providers/database"
 	"github.com/gomsa/old-service/service"
@@ -21,8 +20,8 @@ func main() {
 	)
 	srv.Init()
 
-	// 用户服务实现
-	repo := &service.GoodsRepository{db.Engine}
+	// 商品服务实现
+	repo := &service.GoodsRepository{db.DB}
 	goodsPB.RegisterGoodssHandler(srv.Server(), &hander.Goods{repo})
 	// Run the server
 	if err := srv.Run(); err != nil {
