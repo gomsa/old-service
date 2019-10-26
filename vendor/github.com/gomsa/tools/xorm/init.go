@@ -1,9 +1,9 @@
-package gorm
+package xorm
 
 import (
 	"fmt"
 
-	"github.com/jinzhu/gorm"
+	"github.com/go-xorm/xorm"
 )
 
 // Config 数据库默认配置
@@ -25,15 +25,9 @@ type Config struct {
 }
 
 // Connection 根据驱动创建连接
-func Connection(conf *Config) (db *gorm.DB, err error) {
-	if conf.Driver == "mysql" {
-		return mysqlConnection(conf)
-	}
-	if conf.Driver == "postgres" {
-		return postgresConnection(conf)
-	}
+func Connection(conf *Config) (engine *xorm.Engine, err error) {
 	if conf.Driver == "odbc" {
 		return odbcConnection(conf)
 	}
-	return db, fmt.Errorf(" '%v' driver doesn't exist. ", conf.Driver)
+	return engine, fmt.Errorf(" '%v' driver doesn't exist. ", conf.Driver)
 }

@@ -1,22 +1,23 @@
 package database
 
 import (
-	"github.com/micro/go-log"
+	"log"
 
+	"github.com/go-xorm/xorm"
 	"github.com/gomsa/tools/env"
-	tgorm "github.com/gomsa/tools/gorm"
-	"github.com/jinzhu/gorm"
+	txorm "github.com/gomsa/tools/xorm"
+	"xorm.io/core"
 )
 
-// DB 管理包
+// Engine 管理包
 var (
-	// DB 连接
-	DB *gorm.DB
+	// Engine 连接
+	Engine *xorm.Engine
 )
 
 func init() {
 	var err error
-	conf := &tgorm.Config{
+	conf := &txorm.Config{
 		Driver: env.Getenv("DB_DRIVER", "odbc"),
 		// Host 主机地址
 		Host: env.Getenv("DB_HOST", "192.168.20.10"),
@@ -31,7 +32,8 @@ func init() {
 		// Charset 数据库编码
 		Charset: env.Getenv("DB_CHARSET", "GBK"),
 	}
-	DB, err = tgorm.Connection(conf)
+	Engine, err = txorm.Connection(conf)
+	Engine.SetColumnMapper(core.SameMapper{})
 	if err != nil {
 		log.Fatalf("connect error: %v\n", err)
 	}

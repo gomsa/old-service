@@ -42,9 +42,15 @@ message Goods {
     string UserName = 25;    // 用户名称
     string PackPriceType = 26;// 打包类型
     string PackPriceRate = 27;// 打包价格率
-    string PluStatus = 28;    // 商品状态(0,1,2,3,4,A,B)
-    repeated Barcode Barcodes = 29;
+    string PluStatus = 28;    // 商品状态(0,1,2,3,4,A,B)[0新品试销 1正常 2禁用 3删除 4新增商品]
+    // repeated Barcode Barcodes = 29;
 }
+
+message GoodsGroup{
+    Goods goods = 1;        // 商品基础信息
+    repeated Barcode barcode = 2;   // 商品条形码
+}
+
 message ListQuery{
     int64 limit = 1;          // 返回数量
     int64 page = 2;           // 页面
@@ -61,4 +67,5 @@ message Response {
     int64 total = 2;
     Goods goods = 3;
     repeated Goods goodss = 4;
+    repeated GoodsGroup goods_group = 5; // 商品组信息
 }

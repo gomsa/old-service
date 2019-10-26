@@ -21,7 +21,7 @@ func main() {
 	srv.Init()
 
 	// 商品服务实现
-	repo := &service.GoodsRepository{db.DB}
+	repo := &service.GoodsRepository{db.Engine}
 	goodsPB.RegisterGoodssHandler(srv.Server(), &hander.Goods{repo})
 	// Run the server
 	if err := srv.Run(); err != nil {

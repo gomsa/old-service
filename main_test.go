@@ -13,11 +13,11 @@ import (
 
 func TestGoodsList(t *testing.T) {
 	// 商品仓库 db 接口实现
-	repo := &service.GoodsRepository{db.DB}
+	repo := &service.GoodsRepository{db.Engine}
 	h := hander.Goods{repo}
 	req := &gPD.Request{
 		ListQuery: &gPD.ListQuery{
-			Where: `XgDate|>=|time|2019-10-19 00:00:00,PluCode|=|string|3800368`,
+			Where: `XgDate>='2019-10-01 00:00:00',PluStatus=0 or PluStatus=1`,
 		},
 		Goods: &gPD.Goods{
 			// PluCode: `3301029`,

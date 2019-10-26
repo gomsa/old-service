@@ -14,10 +14,10 @@ type Goods struct {
 
 // List 获取商品列表
 func (srv *Goods) List(ctx context.Context, req *pd.Request, res *pd.Response) (err error) {
-	goods, err := srv.Repo.List(req)
+	goodsGroup, err := srv.Repo.List(req)
 	if err != nil {
 		return err
 	}
-	res.Goodss = goods
+	res.GoodsGroup = goodsGroup
 	return err
 }
