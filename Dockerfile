@@ -10,6 +10,10 @@ RUN GO111MODULE=off
 RUN CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o bin/service
 
 FROM bigrocs/alpine:ca-data
+# 安装 odbc 依赖
+RUN apk add --update unixodbc unixodbc-dev freetds
+
+ADD docker/etc_odbcinst.ini /etc/odbcinst.ini
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
