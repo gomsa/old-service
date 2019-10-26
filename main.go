@@ -8,9 +8,8 @@ import (
 
 	"github.com/gomsa/old-sql/hander"
 	db "github.com/gomsa/old-sql/providers/database"
-	"github.com/gomsa/old-sql/service"
 
-	goodsPB "github.com/gomsa/old-sql/proto/goods"
+	PB "github.com/gomsa/old-sql/proto/sql"
 )
 
 func main() {
@@ -21,8 +20,7 @@ func main() {
 	srv.Init()
 
 	// 商品服务实现
-	repo := &service.GoodsRepository{db.Engine}
-	goodsPB.RegisterGoodssHandler(srv.Server(), &hander.Goods{repo})
+	PB.RegisterSQLSHandler(srv.Server(), &hander.SQL{db.Engine})
 	// Run the server
 	if err := srv.Run(); err != nil {
 		log.Log(err)

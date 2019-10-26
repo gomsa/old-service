@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package sql;
+
+service SQLS {
+    // SQL 语句
+    rpc Query(Request) returns (Response) {}
+}
+
+message Request {
+    string SQL = 1;           // 列表分页请求
+}
+message Response {
+    string results = 1;
+}

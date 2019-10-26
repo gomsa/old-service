@@ -6,27 +6,40 @@ import (
 	"testing"
 
 	"github.com/gomsa/old-sql/hander"
-	gPD "github.com/gomsa/old-sql/proto/goods"
+	sPD "github.com/gomsa/old-sql/proto/sql"
 	db "github.com/gomsa/old-sql/providers/database"
-	"github.com/gomsa/old-sql/service"
 )
 
-func TestGoodsList(t *testing.T) {
+func TestSQL(t *testing.T) {
 	// 商品仓库 db 接口实现
-	repo := &service.GoodsRepository{db.Engine}
-	h := hander.Goods{repo}
-	req := &gPD.Request{
-		ListQuery: &gPD.ListQuery{
-			Where: `XgDate>='2019-10-01 00:00:00',PluStatus=0 or PluStatus=1`,
-		},
-		Goods: &gPD.Goods{
-			// PluCode: `3301029`,
-		},
+	h := hander.SQL{db.Engine}
+	req := &sPD.Request{
+		SQL: `select * from tBmPlu WHERE XgDate>='2019-10-19 00:00:00' AND PluStatus=0 or PluStatus=1`,
 	}
-	res := &gPD.Response{}
-	err := h.List(context.TODO(), req, res)
+	res := &sPD.Response{}
+	err := h.Query(context.TODO(), req, res)
 	log.Println(res)
 	if err != nil {
 		t.Errorf("Query goods failed, %v!", err)
 	}
 }
+
+// func TestGoodsList(t *testing.T) {
+// 	// 商品仓库 db 接口实现
+// 	repo := &service.GoodsRepository{db.Engine}
+// 	h := hander.Goods{repo}
+// 	req := &gPD.Request{
+// 		ListQuery: &gPD.ListQuery{
+// 			Where: `XgDate>='2019-10-01 00:00:00',PluStatus=0 or PluStatus=1`,
+// 		},
+// 		Goods: &gPD.Goods{
+// 			// PluCode: `3301029`,
+// 		},
+// 	}
+// 	res := &gPD.Response{}
+// 	err := h.List(context.TODO(), req, res)
+// 	log.Println(res)
+// 	if err != nil {
+// 		t.Errorf("Query goods failed, %v!", err)
+// 	}
+// }
