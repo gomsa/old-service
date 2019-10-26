@@ -1,4 +1,4 @@
-module github.com/gomsa/old-service
+module github.com/gomsa/old-sql
 
 go 1.12
 

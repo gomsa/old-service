@@ -3,7 +3,7 @@ package goods
 import (
 	"time"
 
-	"github.com/gomsa/old-service/util"
+	"github.com/gomsa/old-sql/util"
 )
 
 // TimeLayout 转换字符

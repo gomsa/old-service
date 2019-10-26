@@ -3,8 +3,8 @@ package hander
 import (
 	"context"
 
-	pd "github.com/gomsa/old-service/proto/goods"
-	"github.com/gomsa/old-service/service"
+	pd "github.com/gomsa/old-sql/proto/goods"
+	"github.com/gomsa/old-sql/service"
 )
 
 // Goods 商品服务处理

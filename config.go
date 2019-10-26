@@ -6,6 +6,6 @@ import (
 
 // Conf 配置
 var Conf config.Config = config.Config{
-	Service: "old-service",
+	Service: "old-sql",
 	Version: "latest",
 }

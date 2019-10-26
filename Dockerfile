@@ -1,6 +1,6 @@
 FROM bigrocs/golang-gcc:1.12 as builder
 
-WORKDIR /go/src/github.com/gomsa/old-service
+WORKDIR /go/src/github.com/gomsa/old-sql
 COPY . .
 
 RUN GO111MODULE=off
@@ -10,5 +10,5 @@ FROM bigrocs/alpine:ca-data
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-COPY --from=builder /go/src/github.com/gomsa/old-service/bin/service /usr/local/bin/
+COPY --from=builder /go/src/github.com/gomsa/old-sql/bin/service /usr/local/bin/
 CMD ["service"]

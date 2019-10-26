@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/go-xorm/xorm"
-	pd "github.com/gomsa/old-service/proto/goods"
+	pd "github.com/gomsa/old-sql/proto/goods"
 )
 
 //Goods 商品仓库接口

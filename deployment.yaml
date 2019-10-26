@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: old-service
+  name: old-sql
   namespace: srv
 spec:
   selector:
-    app: old-service
+    app: old-sql
   type: ClusterIP
   ports:
     - protocol: TCP
@@ -16,25 +16,25 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: old-service
+  name: old-sql
   namespace: srv
   labels:
-    app: old-service
+    app: old-sql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: old-service
+      app: old-sql
   template:
     metadata:
       labels:
-        app: old-service
+        app: old-sql
     spec:
       serviceAccountName: micro-services
       imagePullSecrets:
       - name: pipeline-docker-registry
       containers:
-        - name: old-service
+        - name: old-sql
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
           imagePullPolicy: Always
           command: [
@@ -60,7 +60,7 @@ spec:
           command: [
             "/health",
             "--health_address=0.0.0.0:8081",
-            "--server_name=old-service",
+            "--server_name=old-sql",
             "--server_address=0.0.0.0:8080"
           ]
           livenessProbe:

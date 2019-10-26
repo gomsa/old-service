@@ -5,10 +5,10 @@ import (
 	"log"
 	"testing"
 
-	"github.com/gomsa/old-service/hander"
-	gPD "github.com/gomsa/old-service/proto/goods"
-	db "github.com/gomsa/old-service/providers/database"
-	"github.com/gomsa/old-service/service"
+	"github.com/gomsa/old-sql/hander"
+	gPD "github.com/gomsa/old-sql/proto/goods"
+	db "github.com/gomsa/old-sql/providers/database"
+	"github.com/gomsa/old-sql/service"
 )
 
 func TestGoodsList(t *testing.T) {

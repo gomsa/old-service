@@ -6,11 +6,11 @@ import (
 	micro "github.com/micro/go-micro"
 	"github.com/micro/go-micro/util/log"
 
-	"github.com/gomsa/old-service/hander"
-	db "github.com/gomsa/old-service/providers/database"
-	"github.com/gomsa/old-service/service"
+	"github.com/gomsa/old-sql/hander"
+	db "github.com/gomsa/old-sql/providers/database"
+	"github.com/gomsa/old-sql/service"
 
-	goodsPB "github.com/gomsa/old-service/proto/goods"
+	goodsPB "github.com/gomsa/old-sql/proto/goods"
 )
 
 func main() {
