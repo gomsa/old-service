@@ -1,5 +1,8 @@
 FROM bigrocs/golang-gcc:1.12 as builder
 
+# 安装 odbc 依赖
+RUN apk add --no-cache gcc git musl-dev make zip unixodbc unixodbc-dev freetds
+
 WORKDIR /go/src/github.com/gomsa/old-sql
 COPY . .
 
