@@ -42,6 +42,8 @@
     - PackPriceType 打包类型
     - PackPriceRate 打包价格率
     - PluStatus 商品状态(0,1,2,3,4,A,B)[0新品试销 1正常 2禁用 3删除 4新增商品 5删除 6禁止下单 7清仓 8季节性禁止下单 9新品评估 A暂停零售 B禁止零售]
+
+    
 ### tBmPluPack 打包商品
     - PackCode 包自编码
     - PluCode 商品自编码
