@@ -16,7 +16,7 @@ type SQL struct {
 
 // Query 获取商品列表
 func (srv *SQL) Query(ctx context.Context, req *pd.Request, res *pd.Response) (err error) {
-	results, err := srv.Engine.QueryString(req.SQL)
+	results, err := srv.Engine.Query(req.SQL)
 	mjson, _ := json.Marshal(results)
 	res.Results = string(mjson)
 	return err
