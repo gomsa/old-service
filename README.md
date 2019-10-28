@@ -14,18 +14,25 @@
     - IsEnable 是否启用
 ### tBmPlu 商品
     - PluCode 自编码
+    - inPluCode
     - PluName 商品名称
     - PluAbbrName 别名
     - BarCode 条码
     - Unit 单位
     - Spec 规格
     - Weigt 重量
+    - ColorCode 颜色
+    - SizeCode 尺寸
     - DepCode 部门ID
+    - CargoNo 货号
     - Produce 国家税收分类编码(原产地)
     - Grade 国家税收分类名(原等级)
+    - Season 季节
+    - BzDays 保质期(月)
     - SupCode 供应商ID
     - ClsCode 品类ID
     - BrandCode 品牌ID
+    - TjCode 统计码
     - HJPrice 含税进价
     - WJPrice 未税进价
     - SPrice 零售价
@@ -33,32 +40,53 @@
     - PfPrice 批发价
     - JTaxRate 进项税率
     - XTaxRate 销项税率
+    - JxCj
+    - DkRate
+    - SjRate
+    - JyMode
+    - HtCode 合同
+    - TcRate 提成
+    - MgType
+    - PluType [1会被禁用]
+    - IsColor 管理批号
+    - IsSize 计数称重 [0计重 1计数]
+    - IsWeight 商品模式 [0普通商品 1称重商品 2 承受不定商品 3金额管理商品]
+    - IsDecimal
+    - PluOrigin
     - CgyCode 采购员ID
     - CgyName 采购员名称
+    - PrnTimes
     - XgDate 修改时间
     - LrDate 录入时间
     - UserCode 用户ID
     - UserName 用户名称
+    - YhType
+    - YhEndDate
+    - YhPrice
+    - Tag
+    - PluStatus 商品状态(0,1,2,3,4,A,B)[0新品试销 1正常 2禁用 3删除 4新增商品 5删除 6禁止下单 7清仓 8季节性禁止下单 9新品评估 A暂停零售 B禁止零售]
+    - TimeStamps
+    - ShopGrade 经营登记
+    - PsGrade 配送登记
+    - SmlPack
+    - SmlPackQty
+    - MaxKcNumber
+    - MinKcNumber
+    - DmsNumber
+    - MinShelfNumber 货架陈列下限
+    - OrderDays 订货周期
+    - PriceType [0均可调售价 1 后台可调售价 电子秤不可调售价 2后台不可调售价 电子秤不调售价 3后台不可调售价 电子秤可调售价]
+    - OrderNumber
+    - PsPack 配送单位
+    - PsPackQty 配送系数
+    - IsSeason 是否启用季节
+    - StatusDate
+    - CwCode
+    - CwName
+    - DmType
+    - DmRate
     - PackPriceType 打包类型
     - PackPriceRate 打包价格率
-    - PluStatus 商品状态(0,1,2,3,4,A,B)[0新品试销 1正常 2禁用 3删除 4新增商品 5删除 6禁止下单 7清仓 8季节性禁止下单 9新品评估 A暂停零售 B禁止零售]
-
-   [PluCode]
-   [inPluCode]
-   [PluName]
-   [PluAbbrName]
-   [BarCode]
-   [Unit]
-   [Spec]
-   [Weigt]
-   [ColorCode]
-   [SizeCode]
-   [DepCode]
-   [CargoNo][Produce][Grade][Season][BzDays][SupCode][ClsCode][BrandCode][TjCode][HJPrice][WJPrice][SPrice][HyPrice][PfPrice][JTaxRate][XTaxRate][JxCj][DkRate][SjRate][JyMode][HtCode][TcRate][MgType][PluType][IsColor][IsSize][IsWeight][IsDecimal][PluOrigin][CgyCode][CgyName][PrnTimes][XgDate][LrDate][UserCode][UserName][YhType][YhEndDate][YhPrice][Tag][PluStatus][TimeStamps][ShopGrade][PsGrade][SmlPack][SmlPackQty][MaxKcNumber][MinKcNumber][DmsNumber][MinShelfNumber][OrderDays][PriceType][OrderNumber][PsPack][PsPackQty][IsSeason][StatusDate][CwCode][CwName][DmType][DmRate][PackPriceType][PackPriceRate]
-
-
-
-
     
 ### tBmPluPack 打包商品
     - PackCode 包自编码
