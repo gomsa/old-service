@@ -14,7 +14,7 @@ func TestSQL(t *testing.T) {
 	// 商品仓库 db 接口实现
 	h := hander.SQL{db.Engine}
 	req := &sPD.Request{
-		SQL: `select * from tBmPlu WHERE XgDate>='2019-10-20 00:00:00' AND (PluStatus=0 or PluStatus=1)`,
+		SQL: `select TOP 1 * from tBmPlu WHERE XgDate>='2019-10-20 00:00:00' AND (PluStatus=0 or PluStatus=1)`,
 	}
 	res := &sPD.Response{}
 	err := h.Query(context.TODO(), req, res)
