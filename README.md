@@ -43,6 +43,22 @@
     - PackPriceRate 打包价格率
     - PluStatus 商品状态(0,1,2,3,4,A,B)[0新品试销 1正常 2禁用 3删除 4新增商品 5删除 6禁止下单 7清仓 8季节性禁止下单 9新品评估 A暂停零售 B禁止零售]
 
+   [PluCode]
+   [inPluCode]
+   [PluName]
+   [PluAbbrName]
+   [BarCode]
+   [Unit]
+   [Spec]
+   [Weigt]
+   [ColorCode]
+   [SizeCode]
+   [DepCode]
+   [CargoNo][Produce][Grade][Season][BzDays][SupCode][ClsCode][BrandCode][TjCode][HJPrice][WJPrice][SPrice][HyPrice][PfPrice][JTaxRate][XTaxRate][JxCj][DkRate][SjRate][JyMode][HtCode][TcRate][MgType][PluType][IsColor][IsSize][IsWeight][IsDecimal][PluOrigin][CgyCode][CgyName][PrnTimes][XgDate][LrDate][UserCode][UserName][YhType][YhEndDate][YhPrice][Tag][PluStatus][TimeStamps][ShopGrade][PsGrade][SmlPack][SmlPackQty][MaxKcNumber][MinKcNumber][DmsNumber][MinShelfNumber][OrderDays][PriceType][OrderNumber][PsPack][PsPackQty][IsSeason][StatusDate][CwCode][CwName][DmType][DmRate][PackPriceType][PackPriceRate]
+
+
+
+
     
 ### tBmPluPack 打包商品
     - PackCode 包自编码
