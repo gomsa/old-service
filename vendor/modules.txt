@@ -1,3 +1,5 @@
+# github.com/MXi4oyu/Utils v0.0.0-20190415093248-8aa8453e8876
+github.com/MXi4oyu/Utils/cnencoder/gbk
 # github.com/alexbrainman/odbc v0.0.0-20190102080306-cf37ce290779
 github.com/alexbrainman/odbc
 github.com/alexbrainman/odbc/api
@@ -41,7 +43,7 @@ github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
 github.com/golang/protobuf/ptypes/timestamp
 github.com/golang/protobuf/protoc-gen-go/descriptor
-# github.com/gomsa/tools v0.0.0-20191026003641-26bf724d0699
+# github.com/gomsa/tools v0.0.0-20191027032723-670231029646
 github.com/gomsa/tools/config
 github.com/gomsa/tools/env
 github.com/gomsa/tools/xorm
@@ -190,10 +192,14 @@ golang.org/x/sys/windows
 golang.org/x/sys/unix
 golang.org/x/sys/cpu
 # golang.org/x/text v0.3.2
+golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/transform
+golang.org/x/text/encoding
+golang.org/x/text/encoding/internal
+golang.org/x/text/encoding/internal/identifier
 golang.org/x/text/secure/bidirule
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
-golang.org/x/text/transform
 # google.golang.org/genproto v0.0.0-20190819201941-24fa4b261c55
 google.golang.org/genproto/googleapis/rpc/status
 google.golang.org/genproto/googleapis/api/annotations

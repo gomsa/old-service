@@ -399,6 +399,8 @@ github.com/gomsa/tools v0.0.0-20191024030558-e0367605ac1b h1:X0hpU8cOnIBesgS/qT+
 github.com/gomsa/tools v0.0.0-20191024030558-e0367605ac1b/go.mod h1:5+p7/TJvLdK1Als4HQ+Mh2x9XMcFHMvzauCKcP4o2g0=
 github.com/gomsa/tools v0.0.0-20191026003641-26bf724d0699 h1:UvvMOAKr98UIxHtebGg5a9psxTWxR+5PidH5bV7HrVI=
 github.com/gomsa/tools v0.0.0-20191026003641-26bf724d0699/go.mod h1:5+p7/TJvLdK1Als4HQ+Mh2x9XMcFHMvzauCKcP4o2g0=
+github.com/gomsa/tools v0.0.0-20191027032723-670231029646 h1:KMCFLWshsfBA6Nz37dAYVqDu3JQI5i4ErK3YwTy/IlI=
+github.com/gomsa/tools v0.0.0-20191027032723-670231029646/go.mod h1:5+p7/TJvLdK1Als4HQ+Mh2x9XMcFHMvzauCKcP4o2g0=
 github.com/gomsa/user v0.0.0-20191008032424-4184d1c96f30 h1:8LYRZ5/bTnIJW1NzSg4o+WYoMGaqnNs9TZYVhs8o8eU=
 github.com/gomsa/user v0.0.0-20191008032424-4184d1c96f30/go.mod h1:9oHAeHkkA3n4aAC2AaAqSKN2qYOj9LGQzQybqNxAj8M=
 github.com/google/btree v0.0.0-20180124185431-e89373fe6b4a/go.mod h1:lNA+9X1NB3Zf8V7Ke586lFgjr2dZNuvo3lPJSGZ5JPQ=
